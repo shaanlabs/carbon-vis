@@ -13,6 +13,14 @@ setup_packages <- function(pkg_list = c(
     "ggrepel",    # For non-overlapping text labels
     "plotly",     # For interactive visualizations
     "htmlwidgets",# For saving interactive html widgets
+    "shiny",      # For interactive dashboard
+    "shinydashboard", # Dashboard layout components
+    "shinydashboardPlus", # Enhanced dashboard components
+    "shinyBS",    # Tooltips
+    "DT",         # DataTable for explorer
+    "bslib",      # Theming
+    "ggcorrplot", # Correlation plots
+    "reactable",  # Alternative modern tables
     "tidyr",      # For data tidying
     "knitr",      # For report generation
     "rmarkdown",  # For R Markdown processing
