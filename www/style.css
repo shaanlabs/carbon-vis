@@ -2,3 +2,199 @@ body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, 
 .box .box-title { font-weight: 700; }
 .footer-note { font-size: 12px; color: #6c757d; }
 .legend { font-size: 12px; }
+/* -------------------------------
+   🌍 CO₂lytics Modern Theme
+   Brand: "Where AI meets sustainability"
+   www/style.css
+---------------------------------- */
+
+/* Brand Variables */
+:root {
+  --brand-teal: #00bfa5;
+  --brand-deep: #004d61;
+  --brand-lime: #00e676;
+  --brand-blue: #0288d1;
+  --brand-bg: #f4f7f6;
+  --text-main: #1a1a1a;
+}
+
+/* Fonts & Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+body, html {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--brand-bg);
+  color: var(--text-main);
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(90deg, var(--brand-deep), var(--brand-teal));
+  color: white;
+  text-align: center;
+  padding: 80px 40px;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.hero h4 {
+  font-weight: 400;
+  opacity: 0.9;
+  margin-top: 10px;
+}
+
+/* Animated Buttons */
+button, .btn, .action-button {
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+}
+button:hover, .btn:hover, .action-button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 5px 15px rgba(0,191,165,0.4);
+}
+
+/* KPI Boxes */
+.value-box {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  animation: fadeInUp 0.8s ease-in-out;
+}
+.value-box .small-box.bg-green { background: linear-gradient(135deg, var(--brand-teal), var(--brand-lime)) !important; }
+.value-box .small-box.bg-aqua { background: linear-gradient(135deg, #4fc3f7, var(--brand-blue)) !important; }
+.value-box .small-box.bg-orange { background: linear-gradient(135deg, #ff9800, #f57c00) !important; }
+.value-box .small-box.bg-purple { background: linear-gradient(135deg, #7e57c2, #512da8) !important; }
+
+/* Header & Sidebar polish */
+.main-header .logo, .navbar { background-color: var(--brand-deep) !important; border: 0; }
+.main-header .navbar .sidebar-toggle { color: #e0f7fa !important; }
+.main-sidebar { background-color: var(--brand-deep) !important; }
+.sidebar-menu > li > a { color: #e0f7fa !important; font-weight: 500; }
+.sidebar-menu > li.active > a, .sidebar-menu > li > a:hover { background-color: var(--brand-teal) !important; color: #fff !important; border-radius: 8px; }
+
+/* Boxes & content area */
+.content-wrapper, .right-side { background: var(--brand-bg); }
+.box { border-radius: 12px; border-color: rgba(0,0,0,0.06); box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
+.box .box-header { border-top-left-radius: 12px; border-top-right-radius: 12px; }
+
+/* Controlbar*/
+.control-sidebar { background: #f0f4f5; color: #123; }
+.control-sidebar .form-control, .control-sidebar .selectize-input { border-radius: 8px; }
+
+/* Section Cards */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Section Titles */
+h2, h3, .section-header {
+  color: #004d61;
+  font-weight: 700;
+  border-left: 5px solid #00e676;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+/* Plot Containers */
+.plotly-html-widget {
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: white;
+  padding: 10px;
+}
+.js-plotly-plot .plotly .main-svg { background: transparent !important; }
+
+/* Insight Text */
+.insight {
+  background: #e0f2f1;
+  color: #004d61;
+  border-left: 5px solid #00bfa5;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  animation: fadeIn 1.2s ease;
+}
+
+/* Sidebar Styling */
+.main-sidebar {
+  background-color: #004d61 !important;
+}
+.sidebar-menu > li > a {
+  color: #e0f7fa !important;
+  font-weight: 500;
+}
+.sidebar-menu > li.active > a {
+  background-color: #00bfa5 !important;
+  color: white !important;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--brand-deep);
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  margin-top: 40px;
+}
+.footer a {
+  color: #00e676;
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-teal);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00796b;
+}
+
+/* ---------------- Dark Mode (class: theme-dark) ---------------- */
+.theme-dark body, .theme-dark .content-wrapper, .theme-dark .right-side { background: #0f1720 !important; color: #e9f1ef; }
+.theme-dark .box { background: #18222c !important; color: #e9f1ef; border-color: #23303b; }
+.theme-dark .box .box-header { background: #1e2b36 !important; border-color: #1e2b36; }
+.theme-dark .main-header .logo, .theme-dark .navbar { background-color: #0f1720 !important; }
+.theme-dark .main-sidebar { background-color: #12202a !important; }
+.theme-dark .sidebar-menu > li > a { color: #cfe9e6 !important; }
+.theme-dark .sidebar-menu > li.active > a, .theme-dark .sidebar-menu > li > a:hover { background-color: var(--brand-teal) !important; color: #0b1a1f !important; }
+.theme-dark .plotly-html-widget { background: #15202b; box-shadow: none; }
+.theme-dark .control-sidebar { background: #18222c; color: #e9f1ef; }

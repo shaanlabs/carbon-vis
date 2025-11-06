@@ -47,12 +47,13 @@ create_carbon_footprint_plot <- function(data, interactive = FALSE) {
 #' Create Model Size vs Energy Usage Plot
 #' @param data The AI model dataset
 #' @param interactive Boolean to determine if plot should be interactive
+#' @param show_labels Boolean to determine if labels should be shown
 #' @return A ggplot2 object
-create_model_size_energy_plot <- function(data, interactive = TRUE) {
+create_model_size_energy_plot <- function(data, interactive = TRUE, show_labels = TRUE) {
     p <- ggplot(data, aes(x = Parameters_Billion, y = EnergyUsed_MWh,
                          color = Organization, size = CO2_Tons)) +
         geom_point(alpha = 0.8) +
-        geom_text_repel(aes(label = Model), size = 3, max.overlaps = 20) +
+        { if (isTRUE(show_labels)) ggrepel::geom_text_repel(aes(label = Model), size = 3, max.overlaps = 20) } +
         scale_x_log10(labels = scales::comma_format()) +
         scale_y_log10(labels = scales::comma_format()) +
         scale_size_continuous(labels = scales::comma_format()) +
@@ -113,13 +114,14 @@ create_emissions_trend_plot <- function(data, interactive = FALSE) {
 
 #' Create Energy Efficiency Analysis Plot
 #' @param data The AI model dataset
+#' @param show_labels Boolean to determine if labels should be shown
 #' @return A ggplot2 object
-create_efficiency_plot <- function(data) {
+create_efficiency_plot <- function(data, show_labels = TRUE) {
     data %>%
         mutate(Efficiency = CO2_Tons / Parameters_Billion) %>%
         ggplot(aes(x = Year, y = Efficiency, color = Organization)) +
         geom_point(size = 3) +
-        geom_text_repel(aes(label = Model), size = 3) +
+        { if (isTRUE(show_labels)) ggrepel::geom_text_repel(aes(label = Model), size = 3) } +
         labs(
             title = "🎯 AI Model Training Efficiency Over Time",
             subtitle = "CO₂ emissions per billion parameters",

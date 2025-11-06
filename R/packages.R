@@ -17,10 +17,16 @@ setup_packages <- function(pkg_list = c(
     "shinydashboard", # Dashboard layout components
     "shinydashboardPlus", # Enhanced dashboard components
     "shinyBS",    # Tooltips
+    "shinyjs",    # JS helpers for theme toggling
+    "shinycssloaders", # Loading spinners for plots
     "DT",         # DataTable for explorer
     "bslib",      # Theming
     "ggcorrplot", # Correlation plots
     "reactable",  # Alternative modern tables
+    "here",       # Reliable file paths
+    "forecast",   # ARIMA forecasting (optional)
+    "ranger",     # Fast random forest for feature importance
+    "leaflet",    # Maps
     "tidyr",      # For data tidying
     "knitr",      # For report generation
     "rmarkdown",  # For R Markdown processing
